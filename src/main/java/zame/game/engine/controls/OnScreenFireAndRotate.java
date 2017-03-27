@@ -92,14 +92,13 @@ public class OnScreenFireAndRotate extends OnScreenController {
 	@Override
 	public void updateHero() {
 		if (pointerId < 0) {
-			if (Math.abs(state.heroVertA) > 0.5f) {
+			/*if (Math.abs(state.heroVertA) > 0.5f) {
 				state.heroVertA *= 0.75f;
 
 				if (Math.abs(state.heroVertA) <= 0.5f) {
 					state.heroVertA = 0.0f;
 				}
-			}
-
+			} */
 			return;
 		}
 

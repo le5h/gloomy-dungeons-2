@@ -1066,7 +1066,7 @@ public class Game implements EngineObject {
 		float ox = FloatMath.sin((state.heroA % 30.0f) * GameMath.G2RAD_F);
 		float oy = FloatMath.sin(state.heroVertA * GameMath.G2RAD_F);
 
-		renderer.setQuadOrthoCoords(ox - 1.0f, 1.1f - oy, ox + 1.0f, 0.15f - oy);
+		renderer.setQuadOrthoCoords(ox - 1.0f, 1.5f - oy, ox + 1.0f, 0.15f - oy);
 		renderer.drawQuad();
 
 		renderer.bindTextureRep(gl, engine.textureLoader.textures[TextureLoader.TEXTURE_SKY]);
