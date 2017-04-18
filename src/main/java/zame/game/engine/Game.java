@@ -62,6 +62,7 @@ public class Game implements EngineObject {
 	public boolean actionToggleMap = false;
 	public boolean actionGameMenu = false;
 	public boolean actionUpgradeButton = false;
+	public boolean actionLastWeapon = false;
 	public boolean hasMoved = false;
 	public String savedGameParam = "";
 	public String unprocessedGameCode = "";
@@ -712,6 +713,11 @@ public class Game implements EngineObject {
 		if (actionNextWeapon && weapons.shootCycle==0 && weapons.changeWeaponDir==0) {
 			weapons.nextWeapon();
 			actionNextWeapon = false;
+		}
+
+		if (actionLastWeapon && weapons.shootCycle==0 && weapons.changeWeaponDir==0) {
+			weapons.lastWeapon();
+			actionLastWeapon = false;
 		}
 
 		if (actionFire!=0 && weapons.shootCycle==0 && weapons.changeWeaponDir==0) {

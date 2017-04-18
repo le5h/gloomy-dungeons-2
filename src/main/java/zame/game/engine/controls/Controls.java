@@ -62,12 +62,14 @@ public class Controls implements EngineObject {
 	protected OnScreenButton schemeToggleMapButton = new OnScreenButton(POSITION_RIGHT | POSITION_TOP, OnScreenButton.TYPE_TOGGLE_MAP);
 	protected OnScreenFireAndRotate schemeFireAndRotate = new OnScreenFireAndRotate(POSITION_RIGHT);
 	protected OnScreenUpgradeButton schemeUpgradeButton = new OnScreenUpgradeButton(POSITION_LEFT);
+	protected OnScreenButton schemeLastWeapon = new OnScreenButton(POSITION_RIGHT, OnScreenButton.TYPE_LAST_WEAPON);
 
 	protected OnScreenController[] scheme = new OnScreenController[] {
 		schemeMenuButton,
 		schemePad,
 		schemeToggleMapButton,
 		schemeUpgradeButton,
+		schemeLastWeapon,
 		schemeFireAndRotate // must be last
 	};
 
@@ -91,6 +93,7 @@ public class Controls implements EngineObject {
 		schemeToggleMapButton.position = (config.leftHandAim ? POSITION_LEFT : POSITION_RIGHT) | (config.fireButtonAtTop ? 0 : POSITION_TOP);
 		schemeFireAndRotate.position = (config.leftHandAim ? POSITION_LEFT : POSITION_RIGHT) | (config.fireButtonAtTop ? POSITION_TOP : 0);
 		schemeUpgradeButton.position = (config.leftHandAim ? POSITION_RIGHT : POSITION_LEFT);
+		schemeLastWeapon.position = (config.leftHandAim ? POSITION_LEFT : POSITION_RIGHT) | (config.fireButtonAtTop ? POSITION_TOP : 0);
 
 		for (int i = 0, len = scheme.length; i < len; i++) {
 			scheme[i].setOwner(this, engine);
