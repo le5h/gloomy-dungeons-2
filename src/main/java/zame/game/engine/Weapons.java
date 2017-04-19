@@ -109,6 +109,8 @@ public class Weapons implements EngineObject {
 	protected static final float WALK_OFFSET_X = 1.0f / 8.0f;
 	protected static final float DEFAULT_HEIGHT = 1.5f;
 
+	public int weaponPrev;
+
 	public static final WeaponParams[] WEAPONS = new WeaponParams[] {
 		// WEAPON_HAND
 		new WeaponParams(
@@ -300,6 +302,7 @@ public class Weapons implements EngineObject {
 		shootCycle = 0;
 		changeWeaponDir = 0;
 		updateWeapon();
+		weaponPrev = state.heroWeapon;
 	}
 
 	public void updateWeapon() {
@@ -309,6 +312,7 @@ public class Weapons implements EngineObject {
 	}
 
 	public void switchWeapon(int weaponIdx) {
+		weaponPrev = changeWeaponNext;
 		changeWeaponNext = weaponIdx;
 		changeWeaponTime = engine.elapsedTime;
 		changeWeaponDir = -1;
@@ -330,6 +334,9 @@ public class Weapons implements EngineObject {
 		}
 
 		switchWeapon(resWeapon);
+	}
+	public void lastWeapon(){
+		switchWeapon(weaponPrev);
 	}
 
 	public int getBestWeapon() {

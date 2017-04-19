@@ -105,7 +105,7 @@
 				zame:max="9"
 				android:defaultValue="5"
 			/>
-			<CheckBoxPreference
+			<!--CheckBoxPreference
 				android:key="AccelerometerEnabled"
 				android:title="@string/pref_accelerometer_enabled"
 				android:defaultValue="false"
@@ -123,7 +123,7 @@
 				zame:xmin="1"
 				zame:max="9"
 				android:defaultValue="5"
-			/>
+			/-->
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/pref_key_mappings">
 			<!-- KEYCODE_DPAD_UP -->

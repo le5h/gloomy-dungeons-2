@@ -217,13 +217,13 @@
 		</LinearLayout>
 	</LinearLayout>
 	<!-- layout_yWeight = 1 - 0.35 -->
-	<zame.promo.PromoView
+	<!--zame.promo.PromoView
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
 		zame:layout_heightWeight="0.35"
 		zame:layout_x="0dp"
 		zame:layout_yWeight="0.65"
-	/>
+	/-->
 	<LinearLayout
 		android:id="@+id/discount_offer_wrap"
 		android:layout_width="match_parent"
@@ -241,7 +241,7 @@
 		/>
 		<TextView
 			android:fontFamily="gloomy"
-			android:layout_width="0dp"
+			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:layout_weight="0.7125"
 			android:textColor="#FFF"

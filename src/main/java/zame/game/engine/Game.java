@@ -62,6 +62,7 @@ public class Game implements EngineObject {
 	public boolean actionToggleMap = false;
 	public boolean actionGameMenu = false;
 	public boolean actionUpgradeButton = false;
+	public boolean actionLastWeapon = false;
 	public boolean hasMoved = false;
 	public String savedGameParam = "";
 	public String unprocessedGameCode = "";
@@ -714,6 +715,11 @@ public class Game implements EngineObject {
 			actionNextWeapon = false;
 		}
 
+		if (actionLastWeapon && weapons.shootCycle==0 && weapons.changeWeaponDir==0) {
+			weapons.lastWeapon();
+			actionLastWeapon = false;
+		}
+
 		if (actionFire!=0 && weapons.shootCycle==0 && weapons.changeWeaponDir==0) {
 			weapons.shootCycle++;
 		}
@@ -1066,7 +1072,7 @@ public class Game implements EngineObject {
 		float ox = FloatMath.sin((state.heroA % 30.0f) * GameMath.G2RAD_F);
 		float oy = FloatMath.sin(state.heroVertA * GameMath.G2RAD_F);
 
-		renderer.setQuadOrthoCoords(ox - 1.0f, 1.1f - oy, ox + 1.0f, 0.15f - oy);
+		renderer.setQuadOrthoCoords(ox - 1.0f, 1.5f - oy, ox + 1.0f, 0.15f - oy);
 		renderer.drawQuad();
 
 		renderer.bindTextureRep(gl, engine.textureLoader.textures[TextureLoader.TEXTURE_SKY]);

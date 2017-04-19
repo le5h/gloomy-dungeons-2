@@ -8,6 +8,7 @@ public class OnScreenButton extends OnScreenController {
 	public static final int TYPE_TOGGLE_MAP = 1;
 	public static final int TYPE_NEXT_WEAPON = 2;
 	public static final int TYPE_GAME_MENU = 3;
+	public static final int TYPE_LAST_WEAPON = 4;
 
 	protected int type;
 	protected float fromX;
@@ -24,6 +25,8 @@ public class OnScreenButton extends OnScreenController {
 			this.helpLabelId = Labels.LABEL_HELP_MAP;
 		} else if (type == TYPE_GAME_MENU) {
 			this.helpLabelId = Labels.LABEL_HELP_MENU;
+		} else if (type == TYPE_LAST_WEAPON) {
+			//this.helpLabelId = Labels.LABEL_HELP_LAST;
 		}
 	}
 
@@ -64,6 +67,9 @@ public class OnScreenButton extends OnScreenController {
 				engine.interracted = true;
 			} else if (type == TYPE_GAME_MENU) {
 				game.actionGameMenu = true;
+			} else if (type == TYPE_LAST_WEAPON){
+				game.actionLastWeapon = true;
+				engine.interracted = true;
 			}
 
 			active = true;
@@ -84,6 +90,8 @@ public class OnScreenButton extends OnScreenController {
 			game.actionNextWeapon = false;
 		} else if (type == TYPE_GAME_MENU) {
 			game.actionGameMenu = false;
+		} else if (type == TYPE_LAST_WEAPON){
+			game.actionLastWeapon = false;
 		}
 	}
 
@@ -95,6 +103,8 @@ public class OnScreenButton extends OnScreenController {
 			tex = TextureLoader.ICON_MAP;
 		} else if (type == TYPE_GAME_MENU) {
 			tex = TextureLoader.ICON_MENU;
+		} else if (type == TYPE_LAST_WEAPON){
+			tex = TextureLoader.ICON_LAST_WEAPON;
 		}
 
 		owner.drawIcon(startX, startY, tex, active, false, elapsedTime);

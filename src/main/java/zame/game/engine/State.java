@@ -82,6 +82,8 @@ public class State extends BaseState implements EngineObject {
 	protected static final int FIELD_SHOW_HELP_FULL = 66;
 	protected static final int FIELD_LOOKS = 67;
 
+	protected static final float maxAngle = 15.0f;
+
 	protected Engine engine;
 
 	public String levelName = "";
@@ -188,10 +190,10 @@ public class State extends BaseState implements EngineObject {
 	}
 
 	public void setHeroVertA(float angle) {
-		if (angle < -5.0f) {
-			angle = -5.0f;
-		} else if (angle > 5.0f) {
-			angle = 5.0f;
+		if (angle < -maxAngle) {
+			angle = -maxAngle;
+		} else if (angle > maxAngle) {
+			angle = maxAngle;
 		}
 
 		heroVertA = angle;

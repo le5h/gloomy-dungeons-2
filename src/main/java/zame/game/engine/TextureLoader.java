@@ -85,6 +85,7 @@ public class TextureLoader implements EngineObject {
 	public static final int ICON_BLUE_KEY = BASE_ICONS + 7;
 	public static final int ICON_RED_KEY = BASE_ICONS + 8;
 	public static final int ICON_GREEN_KEY = BASE_ICONS + 9;
+	public static final int ICON_LAST_WEAPON = BASE_ARROWS-1 + 5;
 
 	public static final int OBJ_ARMOR_GREEN = BASE_OBJECTS-1 + 1;
 	public static final int OBJ_ARMOR_RED = BASE_OBJECTS-1 + 2;
